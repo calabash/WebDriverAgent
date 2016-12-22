@@ -336,6 +336,8 @@ typedef id<FBResponsePayload>(^noResultHandlerBlock)(void);
 
 - (id<FBResponsePayload>)handleRotate:(NSDictionary *)specifiers options:(NSDictionary *)options {
     //TODO rotate:(radians) velocity:(velocity)
+    
+    
     return CBXResponseWithErrorFormat(@"Finger rotation is not not implemented...");
 }
 

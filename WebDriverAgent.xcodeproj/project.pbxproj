@@ -30,6 +30,10 @@
 		893988B41E06CCB500DCDDE9 /* XCUIElement+CBXCoordinateGestures.m in Sources */ = {isa = PBXBuildFile; fileRef = 893988B21E06CCB500DCDDE9 /* XCUIElement+CBXCoordinateGestures.m */; };
 		893988B71E06EAD900DCDDE9 /* CBXQueryCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = 893988B51E06EAD900DCDDE9 /* CBXQueryCommands.h */; };
 		893988B81E06EAD900DCDDE9 /* CBXQueryCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 893988B61E06EAD900DCDDE9 /* CBXQueryCommands.m */; };
+		896C86A41E0C54E5008C9281 /* CBXStringUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 896C86A01E0C54E5008C9281 /* CBXStringUtils.h */; };
+		896C86A51E0C54E5008C9281 /* CBXStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 896C86A11E0C54E5008C9281 /* CBXStringUtils.m */; };
+		896C86A61E0C54E5008C9281 /* CBXLSApplicationWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 896C86A21E0C54E5008C9281 /* CBXLSApplicationWorkspace.m */; };
+		896C86A71E0C54E5008C9281 /* CBXLSApplicationWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = 896C86A31E0C54E5008C9281 /* CBXLSApplicationWorkspace.h */; };
 		896D93D61E05AED9008A8358 /* CBXMetaCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = 896D93D41E05AED9008A8358 /* CBXMetaCommands.h */; };
 		896D93D71E05AED9008A8358 /* CBXMetaCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = 896D93D51E05AED9008A8358 /* CBXMetaCommands.m */; };
 		896D93E01E05AF14008A8358 /* CBXCommands.h in Headers */ = {isa = PBXBuildFile; fileRef = 896D93D81E05AF14008A8358 /* CBXCommands.h */; };
@@ -61,8 +65,6 @@
 		896D94241E05B856008A8358 /* CBXSpringBoardAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 896D94201E05B856008A8358 /* CBXSpringBoardAlert.m */; };
 		896D94251E05B856008A8358 /* CBXSpringBoardAlerts.h in Headers */ = {isa = PBXBuildFile; fileRef = 896D94211E05B856008A8358 /* CBXSpringBoardAlerts.h */; };
 		896D94261E05B856008A8358 /* CBXSpringBoardAlerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 896D94221E05B856008A8358 /* CBXSpringBoardAlerts.m */; };
-		896D94291E05C4AE008A8358 /* CBXLSApplicationWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = 896D94271E05C4AE008A8358 /* CBXLSApplicationWorkspace.h */; };
-		896D942A1E05C4AE008A8358 /* CBXLSApplicationWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 896D94281E05C4AE008A8358 /* CBXLSApplicationWorkspace.m */; };
 		AD35D01A1CF1418E00870A75 /* RoutingHTTPServer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD35D0641CF1C2C300870A75 /* RoutingHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD42DD2B1CF1238500806E5D /* RoutingHTTPServer.framework */; };
 		AD35D0661CF1C2CE00870A75 /* Peertalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD35D0651CF1C2CE00870A75 /* Peertalk.framework */; };
@@ -383,6 +385,10 @@
 		893988B21E06CCB500DCDDE9 /* XCUIElement+CBXCoordinateGestures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCUIElement+CBXCoordinateGestures.m"; sourceTree = "<group>"; };
 		893988B51E06EAD900DCDDE9 /* CBXQueryCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBXQueryCommands.h; sourceTree = "<group>"; };
 		893988B61E06EAD900DCDDE9 /* CBXQueryCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBXQueryCommands.m; sourceTree = "<group>"; };
+		896C86A01E0C54E5008C9281 /* CBXStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBXStringUtils.h; path = CBXUtilities/CBXStringUtils.h; sourceTree = "<group>"; };
+		896C86A11E0C54E5008C9281 /* CBXStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBXStringUtils.m; path = CBXUtilities/CBXStringUtils.m; sourceTree = "<group>"; };
+		896C86A21E0C54E5008C9281 /* CBXLSApplicationWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBXLSApplicationWorkspace.m; path = CBXUtilities/CBXLSApplicationWorkspace.m; sourceTree = "<group>"; };
+		896C86A31E0C54E5008C9281 /* CBXLSApplicationWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBXLSApplicationWorkspace.h; path = CBXUtilities/CBXLSApplicationWorkspace.h; sourceTree = "<group>"; };
 		896D93D41E05AED9008A8358 /* CBXMetaCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBXMetaCommands.h; path = CBXCommands/CBXMetaCommands.h; sourceTree = "<group>"; };
 		896D93D51E05AED9008A8358 /* CBXMetaCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBXMetaCommands.m; path = CBXCommands/CBXMetaCommands.m; sourceTree = "<group>"; };
 		896D93D81E05AF14008A8358 /* CBXCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBXCommands.h; path = CBXCommands/CBXCommands.h; sourceTree = "<group>"; };
@@ -414,8 +420,6 @@
 		896D94201E05B856008A8358 /* CBXSpringBoardAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBXSpringBoardAlert.m; path = CBXUtilities/CBXSpringBoard/CBXSpringBoardAlert.m; sourceTree = "<group>"; };
 		896D94211E05B856008A8358 /* CBXSpringBoardAlerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBXSpringBoardAlerts.h; path = CBXUtilities/CBXSpringBoard/CBXSpringBoardAlerts.h; sourceTree = "<group>"; };
 		896D94221E05B856008A8358 /* CBXSpringBoardAlerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBXSpringBoardAlerts.m; path = CBXUtilities/CBXSpringBoard/CBXSpringBoardAlerts.m; sourceTree = "<group>"; };
-		896D94271E05C4AE008A8358 /* CBXLSApplicationWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBXLSApplicationWorkspace.h; sourceTree = "<group>"; };
-		896D94281E05C4AE008A8358 /* CBXLSApplicationWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBXLSApplicationWorkspace.m; sourceTree = "<group>"; };
 		AD35D0651CF1C2CE00870A75 /* Peertalk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peertalk.framework; path = Carthage/Build/iOS/Peertalk.framework; sourceTree = "<group>"; };
 		AD35D0691CF1C30700870A75 /* Peertalk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Peertalk.framework; path = Carthage/Build/Mac/Peertalk.framework; sourceTree = "<group>"; };
 		AD42DD2A1CF121E600806E5D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -766,7 +770,8 @@
 		896D93B81E056745008A8358 /* CBXUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				896D94271E05C4AE008A8358 /* CBXLSApplicationWorkspace.h */,
+				896C86A21E0C54E5008C9281 /* CBXLSApplicationWorkspace.m */,
+				896C86A31E0C54E5008C9281 /* CBXLSApplicationWorkspace.h */,
 				896D940A1E05B7AC008A8358 /* CBXSpringBoard */,
 				896D93E81E05AF3C008A8358 /* CBXCoordinate.h */,
 				896D93E91E05AF3C008A8358 /* CBXCoordinate.m */,
@@ -776,6 +781,8 @@
 				896D94121E05B7E8008A8358 /* CBXInfoPlist.m */,
 				896D93EA1E05AF3C008A8358 /* CBXJSONUtils.h */,
 				896D93EB1E05AF3C008A8358 /* CBXJSONUtils.m */,
+				896C86A01E0C54E5008C9281 /* CBXStringUtils.h */,
+				896C86A11E0C54E5008C9281 /* CBXStringUtils.m */,
 				896D93EC1E05AF3C008A8358 /* CBXMacros.h */,
 				896D93ED1E05AF3C008A8358 /* CBXTextInputFirstResponderProvider.h */,
 				896D93EE1E05AF3C008A8358 /* CBXTextInputFirstResponderProvider.m */,
@@ -1011,7 +1018,6 @@
 				896D93B81E056745008A8358 /* CBXUtilities */,
 				EE9B76A11CF7A43900275851 /* FBConfiguration.h */,
 				EE9B76A21CF7A43900275851 /* FBConfiguration.m */,
-				896D94281E05C4AE008A8358 /* CBXLSApplicationWorkspace.m */,
 				EE7E27181D06C69F001BEC7B /* FBDebugLogDelegateDecorator.h */,
 				EE7E27191D06C69F001BEC7B /* FBDebugLogDelegateDecorator.m */,
 				EE9AB78F1CAEDF0C008C271F /* FBElementTypeTransformer.h */,
@@ -1310,12 +1316,12 @@
 				EE8382AE1D9300D3000BED49 /* XCElementSnapshot-Hitpoint.h in Headers */,
 				EE158AF11CBD456F00A3E3F0 /* FBXPathCreator.h in Headers */,
 				EE158AB41CBD456F00A3E3F0 /* XCUIElement+FBTap.h in Headers */,
+				896C86A41E0C54E5008C9281 /* CBXStringUtils.h in Headers */,
 				EE158ADC1CBD456F00A3E3F0 /* FBResponsePayload.h in Headers */,
 				EE158ACC1CBD456F00A3E3F0 /* FBUnknownCommands.h in Headers */,
 				EEE008091D92BA190043D05C /* XCUIElementHitPointCoordinate.h in Headers */,
 				EEE007F51D92BA190043D05C /* XCTestExpectationDelegate-Protocol.h in Headers */,
 				EEE008011D92BA190043D05C /* XCTestSuiteRun.h in Headers */,
-				896D94291E05C4AE008A8358 /* CBXLSApplicationWorkspace.h in Headers */,
 				EEE007DE1D92BA190043D05C /* XCEventGenerator.h in Headers */,
 				EEE007F01D92BA190043D05C /* XCTestContext.h in Headers */,
 				896D940D1E05B7DC008A8358 /* CBXAlertHandler.h in Headers */,
@@ -1347,6 +1353,7 @@
 				EEE007C61D92BA190043D05C /* _XCTestDriverTestObserver.h in Headers */,
 				EEE007D21D92BA190043D05C /* UIPinchGestureRecognizer-RecordingAdditions.h in Headers */,
 				EEE008081D92BA190043D05C /* XCUIElementAsynchronousHandlerWrapper.h in Headers */,
+				896C86A71E0C54E5008C9281 /* CBXLSApplicationWorkspace.h in Headers */,
 				EEE007C71D92BA190043D05C /* _XCTestExpectationImplementation.h in Headers */,
 				EEE008031D92BA190043D05C /* XCUIApplicationImpl.h in Headers */,
 				EEE007D41D92BA190043D05C /* UITapGestureRecognizer-RecordingAdditions.h in Headers */,
@@ -1706,7 +1713,6 @@
 				EEDFE1221D9C06F800E6FFE5 /* XCUIDevice+FBHealthCheck.m in Sources */,
 				EE158AF81CBD456F00A3E3F0 /* FBSpringboardApplication.m in Sources */,
 				896D93E51E05AF14008A8358 /* CBXHealthCommands.m in Sources */,
-				896D942A1E05C4AE008A8358 /* CBXLSApplicationWorkspace.m in Sources */,
 				EE158AD91CBD456F00A3E3F0 /* FBResponseFilePayload.m in Sources */,
 				EEE3764A1D59FAE900ED88DD /* XCUIElement+FBWebDriverAttributes.m in Sources */,
 				EE158ACB1CBD456F00A3E3F0 /* FBTouchIDCommands.m in Sources */,
@@ -1719,9 +1725,11 @@
 				EEE376461D59F81400ED88DD /* XCUIElement+FBUtilities.m in Sources */,
 				EE9B76A91CF7A43900275851 /* FBLogger.m in Sources */,
 				EE158ABB1CBD456F00A3E3F0 /* FBCustomCommands.m in Sources */,
+				896C86A61E0C54E5008C9281 /* CBXLSApplicationWorkspace.m in Sources */,
 				896D93E31E05AF14008A8358 /* CBXGestureCommands.m in Sources */,
 				AD6C26991CF2481700F8B5FF /* XCUIDevice+FBHelpers.m in Sources */,
 				EE6B64FE1D0F86EF00E85F5D /* XCTestPrivateSymbols.m in Sources */,
+				896C86A51E0C54E5008C9281 /* CBXStringUtils.m in Sources */,
 				AD76723E1D6B7CC000610457 /* XCUIElement+FBTyping.m in Sources */,
 				EE158AAF1CBD456F00A3E3F0 /* XCUIElement+FBAccessibility.m in Sources */,
 				EE158AE51CBD456F00A3E3F0 /* FBSession.m in Sources */,
