@@ -15,12 +15,12 @@ static NSDictionary <NSString *, NSNumber *> *typeStringToElementType;
         return @{@"error" : @"element does not exist"};
     }
     NSMutableDictionary *json = [NSMutableDictionary dictionary];
-    json[@"type"] = element.wdType ?: @"";
-    json[@"label"] = element.wdLabel ?: @"";
-    json[@"name"] = element.wdName ?: @"";
-    json[@"value"] = element.wdValue ?: @"";
-    json[@"frame"] = json[@"rect"] = element.wdRect;
-    json[@"id"] = element.identifier ?: @"";
+    json[@"type"] = element.wdType ?: [NSNull null];
+    json[@"label"] = element.wdLabel ?: [NSNull null];
+    json[@"name"] = element.wdName ?: [NSNull null];
+    json[@"value"] = element.wdValue ?: [NSNull null];
+    json[@"frame"] = json[@"rect"] = element.wdRect ?: [NSNull null];
+    json[@"id"] = element.identifier ?: [NSNull null];
     json[@"enabled"] = @(element.wdEnabled);
     json[@"visible"] = @(element.wdVisible);
     json[@"hitable"] = @([self elementHitable:element]);

@@ -1,4 +1,5 @@
 
+#import "XCUIApplication+FBHelpers.h"
 #import "XCUIElement+FBFind.h"
 #import "FBApplication.h"
 
@@ -17,8 +18,9 @@ static NSArray <NSString *> *textProperties;
     @[
       [[FBRoute GET:CBXRoute(@"/springboard-alert")].withCBXSession respondWithTarget:self
                                                                                action:@selector(handleSpringboardAlert:)],
-      [[FBRoute GET:CBXRoute(@"/query")].withCBXSession respondWithTarget:self
-                                                                   action:@selector(handleQuery:)]
+      [[FBRoute POST:CBXRoute(@"/query")].withCBXSession respondWithTarget:self
+                                                                   action:@selector(handleQuery:)],
+      [[FBRoute GET:CBXRoute(@"/tree")].withCBXSession respondWithTarget:self action:@selector(handleTree:)]
       ];
 }
 
@@ -36,9 +38,8 @@ static NSArray <NSString *> *textProperties;
                              ];
         
         textProperties = @[@"wdLabel",
-                           @"wdTitle",
-                           @"wdValue",
-                           @"wdPlaceholderValue"];
+                           @"wdName",
+                           @"wdValue"];
     });
 }
 
@@ -47,7 +48,9 @@ static NSArray <NSString *> *textProperties;
 }
 
 + (NSPredicate *)markedPredicate:(NSString *)mark {
-    return [CBXStringUtils predicateFromKeys:markedProperties value:mark];
+    return [CBXStringUtils predicateFromKeys:textProperties /*TODO: markedProperties. 
+                                                             Doesn't work because keys aren't whitelisted by fb*/
+                                       value:mark];
 }
 
 + (id<FBResponsePayload>)handleSpringboardAlert:(FBRouteRequest *)request {
@@ -85,5 +88,11 @@ static NSArray <NSString *> *textProperties;
         }
     }
     return CBXResponseWithJSON(@{@"result" : json});
+}
+
++ (id<FBResponsePayload>)handleTree:(FBRouteRequest *)request {
+    const BOOL accessibleTreeType = [request.parameters[@"accessible"] boolValue];
+    FBApplication *application = [FBSession activeSession].application;
+    return FBResponseWithStatus(FBCommandStatusNoError, @{ @"tree": (accessibleTreeType ? application.fb_accessibilityTree : application.fb_tree) ?: @{} } );
 }
 @end
