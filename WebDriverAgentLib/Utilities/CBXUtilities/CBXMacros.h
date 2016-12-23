@@ -8,4 +8,8 @@
 
 #define FLOAT_EPSILON 0.0001
 #define float_eq(f1, f2) (fabs(f1 - f2) < FLOAT_EPSILON)
-#endif
+
+#define DEGREES_TO_RADIANS(degrees) ((degrees) / 180.0 * M_PI)
+#define RADIANS_TO_DEGREES(radians) ((radians) * (180.0 / M_PI))
+
+#endif //CBXMacros_h

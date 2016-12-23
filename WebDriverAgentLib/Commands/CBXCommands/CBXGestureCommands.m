@@ -336,9 +336,38 @@ typedef id<FBResponsePayload>(^noResultHandlerBlock)(void);
 
 - (id<FBResponsePayload>)handleRotate:(NSDictionary *)specifiers options:(NSDictionary *)options {
     //TODO rotate:(radians) velocity:(velocity)
+    CGFloat  radians;
+    CGFloat velocity = [options hasKey:@"velocity"] ? [options[@"velocity"] floatValue] : 1.0f;
     
+    if ([options hasKey:@"radians"]) {
+        radians = [options[@"radians"] doubleValue];
+    } else if ([options hasKey:@"degrees"]) {
+        radians = DEGREES_TO_RADIANS([options[@"degrees"] doubleValue]);
+    } else {
+        return CBXResponseWithException([NSException exceptionWithName:@"MissingArgumentException"
+                                                                reason:@"Please provide 'radians' or 'degrees' in the 'specifiers' object"
+                                                              userInfo:nil]);
+    }
     
-    return CBXResponseWithErrorFormat(@"Finger rotation is not not implemented...");
+    return [self getElementOrCoordinate:specifiers
+                                handler:^id<FBResponsePayload>(XCUIApplication *app,
+                                                               XCUIElement *element,
+                                                               CBXCoordinate *coord) {
+                                    if (element) {
+                                        [element rotate:radians withVelocity:velocity];
+                                    } else {
+                                        [app cbx_rotateAtCoordinate:coord.cgpoint
+                                                            radians:radians
+                                                           velocity:velocity
+                                                          withError:nil];
+                                    }
+                                    return CBXResponseWithStatus(@"success", @{
+                                                                               @"radians" : @(radians),
+                                                                               @"velocity" : @(velocity)
+                                                                               });
+                                } noResultHandler:^id<FBResponsePayload>{
+                                    return CBXResponseWithErrorFormat(@"No element found for specifiers: %@", specifiers.pretty);
+                                }];
 }
 
 + (id<FBResponsePayload>)handleGesture:(FBRouteRequest *)request {

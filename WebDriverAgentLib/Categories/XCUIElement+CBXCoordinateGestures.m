@@ -60,7 +60,9 @@ static float const CBX_HALF_FINGER = CBX_FINGER_WIDTH / 2.0f;
                      velocity:(double)velocity
                     withError:(NSError * _Nullable __autoreleasing *)error {
     return [self generateEvent:^(XCEventGenerator *eventGenerator, XCEventGeneratorHandler handlerBlock) {
-        CGPoint hitPoint = FBInvertPointForApplication(point, self.application.frame.size, self.application.interfaceOrientation);
+        CGPoint hitPoint = FBInvertPointForApplication(point,
+                                                       self.application.frame.size,
+                                                       self.application.interfaceOrientation);
         /*
             TODO: The theory here is that we want a localized rect around the desired point.
             The question is... how big should the rect be?
@@ -80,6 +82,38 @@ static float const CBX_HALF_FINGER = CBX_FINGER_WIDTH / 2.0f;
                                 handler:handlerBlock];
         } else {
             [FBLogger logFmt:@"Error: Unable to synthesize event, XCEventGenerator does not respond to %@", NSStringFromSelector(pincher)];
+        }
+    } error:error];
+}
+
+- (BOOL)cbx_rotateAtCoordinate:(CGPoint)point
+                       radians:(double)radians
+                      velocity:(double)velocity
+                     withError:(NSError * _Nullable __autoreleasing *)error {
+    return [self generateEvent:^(XCEventGenerator *eventGenerator, XCEventGeneratorHandler handlerBlock) {
+        CGPoint hitPoint = FBInvertPointForApplication(point,
+                                                       self.application.frame.size,
+                                                       self.application.interfaceOrientation);
+        /*
+         TODO: The theory here is that we want a localized rect around the desired point.
+         The question is... how big should the rect be?
+         Current working theory: should fit at least two fingers
+         */
+        CGRect twoFingerRect = CGRectMake(hitPoint.x - CBX_HALF_FINGER,
+                                          hitPoint.y - CBX_HALF_FINGER,
+                                          CBX_FINGER_WIDTH,
+                                          CBX_FINGER_WIDTH);
+        
+        //TODO: I am assuming the second param is radians, based on  -[XCUIElement rotate:withVelocity:]
+        SEL rotater = @selector(rotateInRect:withRotation:velocity:orientation:handler:);
+        if ([eventGenerator respondsToSelector:rotater]) {
+            [eventGenerator rotateInRect:twoFingerRect
+                            withRotation:radians
+                                velocity:velocity
+                             orientation:self.interfaceOrientation
+                                 handler:handlerBlock];
+        } else {
+            [FBLogger logFmt:@"Error: Unable to synthesize event, XCEventGenerator does not respond to %@", NSStringFromSelector(rotater)];
         }
     } error:error];
 }

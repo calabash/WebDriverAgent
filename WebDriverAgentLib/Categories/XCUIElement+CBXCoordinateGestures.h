@@ -13,10 +13,19 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)cbx_twoFingerTapAtCoordinate:(CGPoint)point withError:(NSError **)error;
 
+/**
+ */
 - (BOOL)cbx_pinchAtCoordinate:(CGPoint)point
                         scale:(double)scale
                      velocity:(double)velocity
                     withError:(NSError * _Nullable __autoreleasing *)error;
+
+/**
+ */
+- (BOOL)cbx_rotateAtCoordinate:(CGPoint)point
+                       radians:(double)radians
+                      velocity:(double)velocity
+                     withError:(NSError * _Nullable __autoreleasing *)error;
 
 @end
 
